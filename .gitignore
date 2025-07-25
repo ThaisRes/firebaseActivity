@@ -1,0 +1,9 @@
+# Ignora todos os arquivos .txt
+*.txt
+*/node_modules
+node_modules
+*node_modules
+*\node_modules
+*outrasAulas
+*serviceAcc.json
+*.env
