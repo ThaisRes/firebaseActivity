@@ -5,6 +5,9 @@ const db = getFirestore(app);
 
 async function findAll() {
   const documents = await db.collection("produtos").get(); //consultar a coleção produtos
+  /* para procurar na ordem tem que criar uma coluna com hora e data e buscar por data
+  db.collection("nomeDaColecao").orderBy("campo", "asc")
+  asc de ascendente ou pode usar descendente com desc*/
     const produtos = [];  
     documents.forEach(doc => {
       const produto = { ...doc.data(), id: doc.id };      

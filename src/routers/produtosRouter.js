@@ -54,13 +54,14 @@ produtosRouter.put("/produtos/:id", async (req, res) => {
 produtosRouter.delete("/produtos/:id", async (req, res) =>{
   try {
     const id = req.params.id;
-    flag = await remove(id);    
+    const flag = await remove(id);    
     if (flag){      
       return res.status(200).json({msg:"Produto excluido"});
     } else {
       return res.status(404).json({msg:"Produto não encontrado"});
     }
   } catch (error) {
+    console.error("Erro na rota DELETE:", error);
     return res.status(500).json({msg: "Erro interno do servidor"});
   }
 });
